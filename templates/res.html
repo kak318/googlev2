@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Results for {{ q }} | Google v2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Caveat|Covered+By+Your+Grace|Gloria+Hallelujah|Kaushan+Script|Marck+Script|Satisfy|Shadows+Into+Light|Yellowtail" rel="stylesheet">
+	</head>
+ 
+	<body>
+		<center>
+			<h1>Google v2</h1>
+		</center>
+		<form method="POST" action="/s">
+			<div class="form-group" style="position: absolute; left: 5%;">
+				<input style="height: 30px; width: 300px;" type="text" value="{{ q }}" name="q" autofocus/>		
+				<input style=" font-size: 13px; text-align: center; font-weight: bold" class="btn btn-primary" type="submit" name="search" value="Search" />
+			</div>
+		</form>
+		<div style="position: absolute; left: 5%; top: 20%; word-wrap: normal; margin-right: auto">
+			<p>{{ rnum }} results found for {{ q }}</p></br>
+      <div class="content">
+        {% for i in range(rnum) %}
+        <p>{{ ts[i] }}</p>
+        {% endfor %}
+      </div>
+		</div>
+</body>
+</html>
